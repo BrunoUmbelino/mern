@@ -5,6 +5,10 @@ const ContentController = require("./controllers/ContentController");
 
 const routes = express.Router();
 
+routes.get("/", (request, response) => {
+  return response.send("ok");
+});
+
 // Annotation Route
 routes.get("/annotations", AnnotationController.read);
 routes.post("/annotations", AnnotationController.create);
