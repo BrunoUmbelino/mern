@@ -1,5 +1,5 @@
 const express = require("express");
-const AnnotationController = require("./controllers/AnnotationController");
+const NotesController = require("./controllers/NotesController");
 const PriorityController = require("./controllers/PriorityController");
 const ContentController = require("./controllers/ContentController");
 
@@ -10,9 +10,9 @@ routes.get("/", (request, response) => {
 });
 
 // Annotation Route
-routes.get("/annotations", AnnotationController.read);
-routes.post("/annotations", AnnotationController.create);
-routes.delete("/annotations/:id", AnnotationController.exclude);
+routes.get("/annotations", NotesController.read);
+routes.post("/annotations", NotesController.create);
+routes.delete("/annotations/:id", NotesController.exclude);
 
 // Priority Route
 routes.get("/priorities", PriorityController.read);

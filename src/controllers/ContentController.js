@@ -1,16 +1,15 @@
-const Annotations = require("../models/AnnotationData");
+const Notes = require("../models/NotesData");
 
 const update = async (request, response) => {
   const { id } = request.params;
-  const { notes } = request.body;
+  const { content } = request.body;
 
-  const annotation = await Annotations.findOne({ _id: id });
-  if (notes) {
-    annotation.notes = notes;
-    await annotation.save();
+  const note = await Notes.findOne({ _id: id });
+  if (note) {
+    note.content = content;
+    await note.save();
   }
-
-  return response.json(annotation);
+  return response.json(note);
 };
 
 module.exports = { update };

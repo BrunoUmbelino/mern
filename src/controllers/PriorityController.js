@@ -1,14 +1,14 @@
-const Annotations = require("../models/AnnotationData");
+const Notes = require("../models/NotesData");
 
 const read = async (request, response) => {
   const priority = request.query;
-  const priorityNotes = await Annotations.find(priority);
+  const priorityNotes = await Notes.find(priority);
   return response.json(priorityNotes);
 };
 
 const update = async (request, response) => {
   const { id } = request.params;
-  const annotation = await Annotations.findOne({ _id: id });
+  const annotation = await Notes.findOne({ _id: id });
 
   if (annotation.priority) {
     annotation.priority = false;
