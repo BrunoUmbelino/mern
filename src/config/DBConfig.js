@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
-const dbConfig =
-  "mongodb+srv://mongodb:D38EVb7xLWWd8CU3@cluster0.gh0du.mongodb.net/NOTES-DB?retryWrites=true&w=majority";
+const db_string = process.env.DB_STRING;
 
-const connection = mongoose.connect(dbConfig, {
+const connection = mongoose.connect(db_string, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
