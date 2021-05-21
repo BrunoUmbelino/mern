@@ -6,13 +6,12 @@ const read = async (request, response) => {
 };
 
 const create = async (request, response) => {
-  const { title, content, priority } = request.body;
+  const { content, priority } = request.body;
 
-  if (!content || !title) {
+  if (!content) {
     return response.status(400).json({ error: "Insert a note content!" });
   }
   const noteCreated = await Notes.create({
-    title,
     content,
     priority,
   });

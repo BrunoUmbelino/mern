@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const NotesDataSchema = new mongoose.Schema({
-  title: String,
   content: String,
   priority: Boolean,
 });
